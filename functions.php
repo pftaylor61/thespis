@@ -39,20 +39,46 @@ function ocwsthps__register_required_plugins() {
 	 * If the source is NOT from the .org repo, then source is also required.
 	 */
 	$plugins = array(
-            array(
-			'name'               => 'Simple Fullscreen Responsive Slider', // The plugin name.
-			'slug'               => 'simple-fullscreen-responsive-slider', // The plugin slug (typically the folder name).
-			'source'             => get_template_directory() . '/lib/plugins/simple-fullscreen-responsive-slider.zip', // The plugin source.
-			'required'           => true, // If false, the plugin is only 'recommended' instead of required.
-			'version'            => '', // E.g. 1.0.0. If set, the active plugin must be this version or higher. If the plugin version is higher than the plugin version installed, the user will be notified to update the plugin.
-			'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
-			'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
-			'external_url'       => '', // If set, overrides default API URL and points to an external URL.
-			'is_callable'        => '', // If set, this callable will be be checked for availability to determine if a plugin is active.
+
+		
+
+		// Simple Fullscreen Responsive Slider
+		// The slider plugin, from Wordpress repository
+		array(
+			'name'      => 'Simple Fullscreen Responsive Slider',
+			'slug'      => 'simple-fullscreen-responsive-slider',
+			'required'  => false,
 		),
-        );
-        
-        /*
+		
+		// Foo Gallery
+		// The gallery plugin, from Wordpress repository
+		array(
+			'name'      => 'Foo Gallery',
+			'slug'      => 'foogallery',
+			'required'  => false,
+		),
+		
+		// Duplicate Widget
+		// Plugin to help synchronize widgets, from Wordpress repository
+		array(
+			'name'      => 'Duplicate Widget',
+			'slug'      => 'duplicate-widget',
+			'required'  => false,
+		),
+		
+		// Front-end Editor
+		// Plugin for editing a page or post from the front end, from Wordpress repository
+		array(
+			'name'      => 'Front-end Editor',
+			'slug'      => 'wp-front-end-editor',
+			'required'  => false,
+		),
+
+		
+
+	);
+
+	/*
 	 * Array of configuration settings. Amend each line as needed.
 	 *
 	 * TGMPA will start providing localized text strings soon. If you already have translations of our standard
@@ -296,7 +322,7 @@ function Thespis_fonts_url() {
 	/* translators: If there are characters in your language that are not supported by Kreon, translate this to 'off'.
 	 * Do not translate into your own language.
 	 */
-	$kreon = _x( 'on', 'Kreon font: on or off', 'Thespis' );
+	$actorfont = _x( 'on', 'Actor font: on or off', 'Thespis' );
 
 	if ( 'off' !== $tenor_sans || 'off' !== $kreon ) {
 		$font_families = array();
@@ -304,8 +330,8 @@ function Thespis_fonts_url() {
 		if ( 'off' !== $pt_sans )
 			$font_families[] = 'Tenor+Sans:400,400italic,700,700italic';
 
-		if ( 'off' !== $Kreon )
-			$font_families[] = 'Kreon:400';
+		if ( 'off' !== $actorfont )
+			$font_families[] = 'Actor:400';
 
 		$protocol = is_ssl() ? 'https' : 'http';
 		$query_args = array(
@@ -1047,7 +1073,8 @@ if ( ! function_exists( 'Thespis_get_credits' ) ) {
 		);
                  * The code belw needs amending for translation purposes
                  */
-                $output = 'This website is powered by <a href="http://wordpress.org">Wordpress</a>, using the <strong>Thespis</strong> theme from <a href="http://oldcastleweb.com">Old Castle Web Solutions</a>.';
+                $thespis_info = wp_get_theme();
+                $output = 'This website is powered by <a href="http://wordpress.org">Wordpress</a>, using the <strong>'.$thespis_info->get( 'Name' ).'</strong> theme, version '.$thespis_info->get( 'Version' ).', from <a href="http://oldcastleweb.com">Old Castle Web Solutions</a>.';
 
 		return $output;
 	}

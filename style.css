@@ -4,7 +4,7 @@ Theme URI: http://www.oldcastleweb.com/pws/themes/thespis/
 Author: Paul Taylor
 Author URI: http://www.oldcastleweb.com
 Description: Thespis is a fully responsive theme for Wordpress. It is an adaptation of my basic Qohelet theme, designed for a client who is an actor. The Qohelet theme itself was built on the shoulders of giants, utilizing a number of other technologies, such as: 1. The Quark starter theme by Anthony Horton. 2. Quark is in turn built upon Underscores by Automattix. 3. Quark utilizes Normalize, Modernizr and Options Framework. 4. Many other smaller amounts of other technologies have been incorporated, so that I did not re-invent the wheel.
-Version: 0.2
+Version: 0.5.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, gray, dark, light, one-column, two-columns, right-sidebar, fluid-layout, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, microformats, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
@@ -107,7 +107,7 @@ img.wp-smiley,
 
 /* Header */
 h1, h2, h3, h4, h5, h6 {
-	font-family: 'Kreon', Georgia, "Times New Roman", Times, serif;
+	font-family: 'Actor', arial, Helvetica, sans- serif;
 	font-style: normal;
 	font-weight: 400;
 	color: #ccc;
@@ -820,8 +820,10 @@ select {
 }
 
 #maincontentcontainer .home-sidebar .widget {
-	background-color: #fcfcfc;
-	border: 1px solid #bbb;
+	/* background-color: #fcfcfc; */
+        color: #fff;
+	/*
+        border: 1px solid #bbb;
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
 	-moz-background-clip: padding;
@@ -829,6 +831,7 @@ select {
 	background-clip: padding-box;
 	padding: 10px;
 	padding: 0.625rem;
+        */
 }
 
 #maincontentcontainer {
@@ -845,7 +848,7 @@ select {
 	margin: 0 auto;
 	padding: 32px 0;
 	padding: 2rem 0;
-	color: #333;
+	color: #fff;
 	line-height: 1.5;
 	position: relative;
 }
@@ -934,7 +937,7 @@ select {
 }
 
 article.sticky .featured-post {
-	font-family: 'Kreon', Georgia, "Times New Roman", Times, serif;
+	font-family: 'Actor', arial, Helvetica, sans- serif;
 	font-style: normal;
 	font-weight: 400;
 	border-top: 4px double #aaa;
@@ -2067,7 +2070,7 @@ li span.dots {
    ========================================================================== */
 
 h1.page-title {
-	font-family: 'Kreon', Georgia, "Times New Roman", Times, serif;
+	font-family: 'Actor', arial, Helvetica, sans- serif;
 	font-style: normal;
 	font-weight: 400;
 	color: #333;
@@ -2441,4 +2444,54 @@ h1.page-title {
   @page { margin: 0.5cm; }
   p, h2, h3 { orphans: 3; widows: 3; }
   h2, h3 { page-break-after: avoid; }
+}
+
+/* extra theme specific ideas */
+.ocws_border {
+    background-color: white;
+    padding:5px;
+    margin-left: auto;
+    margin-right: auto;
+    width:530px;
+    height:359px;
+    
+}
+
+#ocws_cmag_table {
+    color: #000;
+}
+
+#ocws_cmag_table_h1 {
+    color:#ffffff;
+    background-color:#385e3d;
+    
+}
+#ocws_cmag_table_h1 td {
+    border-color: #000;
+    
+}
+
+
+#ocws_cmag_table_h2 {
+    background-color: #aaa;
+    
+}
+
+#ocws_cmag_table_h2 td {
+    border-color: #333;
+}
+
+#ocws_cmag_table_ra {
+    background-color: #fff;
+}
+#ocws_cmag_table_rb {
+    background-color: #f1f1f1;
+}
+.ocws_table_hd {
+    color:#ffffff;
+    background-color:#385e3d;
+    width:100%;
+    font-size: 24px;
+    font-weight: bold;
+    padding-left: 10px;
 }
