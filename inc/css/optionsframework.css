@@ -1,8 +1,9 @@
 /* Options Framework Admin Styles */
 
 #optionsframework {
-    max-width:840px;
+    max-width:800px;
     background:#fff;
+    float:left;
 }
 #optionsframework h3 {
 	cursor: default;
@@ -221,4 +222,11 @@
 }
 #optionsframework .section:after {
 	clear: both;
+}
+
+#optionsframework-sidebar {
+    text-align:center;
+    float: left;
+    margin-left: 20px;
+    width: 320px;
 }

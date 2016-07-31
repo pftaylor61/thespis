@@ -278,3 +278,29 @@ function optionsframework_options() {
 
 	return $options;
 }
+
+add_action( 'optionsframework_after','thespis_options_display_sidebar' );
+
+function thespis_options_display_sidebar() { 
+        // replaceable variables
+        $ocws_theme_screenshot_thumb = "thespis400.png";
+        $ocws_theme_op_text = "<p><strong>Thespis</strong> is a fully responsive theme for Wordpress. It has been specifically designed for actors, performers, singers and entertainers. This theme has been built on the shoulders of giants, utilizing a number of other technologies, such as: 1. The Quark starter theme by Anthony Horton. 2. Quark is in turn built upon Underscores by Automattix. 3. Quark utilizes Normalize, Modernizr and Options Framework. 4. Many other smaller amounts of other technologies have been incorporated, so that I did not re-invent the wheel.</p><p><strong>Note:</strong> All images used for sliders must be 1400 x 400 pixels.</p>";
+        
+	 ?>
+        <div id="optionsframework-sidebar">
+		<div class="metabox-holder">
+	    	<div class="ocws_postbox">
+	    		<h3><?php esc_attr_e( 'About Dewi', 'dewi' ); ?></h3>
+                        <img src="<?php echo get_template_directory_uri().'/assets/'.$ocws_theme_screenshot_thumb; ?>" style="margin-right:auto; margin-left:auto; width:300px;" />
+      			<div class="ocws_inside_box"> 
+                            <?php echo $ocws_theme_op_text; ?>
+	      			
+      			</div><!-- ocws_inside_box -->
+	    	</div><!-- .ocws_postbox -->
+	  	</div><!-- .metabox-holder -->
+	</div><!-- #optionsframework-sidebar -->
+        
+        
+<?php
+}
+?>
